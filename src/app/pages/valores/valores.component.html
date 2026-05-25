@@ -1,0 +1,69 @@
+<div class="container mt-4">
+
+  <h2>Valores</h2>
+
+ 
+
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let p of valores">
+
+        <td>{{p.id}}</td>
+        <td>{{p.nombre}}</td>
+        <td style="text-align:right">
+
+          <span *ngIf="editandoId != p.id">
+                {{ p.valor | number:'1.2-4':'es-AR' }}
+          </span>
+
+    <input *ngIf="editandoId == p.id"
+           type="text"
+           class="text-right"
+           [ngModel]="p.valor"
+           (ngModelChange)="onValorEdit($event, p)"
+           (keypress)="soloDecimal($event, p.valor.toString())">
+
+</td>
+        
+
+        <td>
+
+         <button *ngIf="editandoId != p.id"
+                class="btn btn-warning btn-sm me-2"
+                 (click)="editar(p)">
+                Editar
+        </button>
+
+        <button *ngIf="editandoId == p.id"
+        class="btn btn-success btn-sm me-2"
+        (click)="guardarFila(p)">
+        Guardar
+        </button>
+        <button *ngIf="editandoId == p.id"
+        class="btn btn-warning btn-sm me-2"
+        (click)="cancelar()">
+        Cancelar
+        </button>
+
+       
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
