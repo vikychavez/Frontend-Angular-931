@@ -22,6 +22,8 @@ valores: Valores[] = [];
   valor: Valores = {
     id: 0,
     nombre:'',
+    empresa:'',
+    modalidad:0,
     valor: 0,
     usuario: 0
 };
@@ -108,6 +110,8 @@ valores: Valores[] = [];
     this.valor = {
       id:0,
       nombre:'',
+      empresa:'',
+      modalidad:0,
       valor:0,
       usuario:0
     };

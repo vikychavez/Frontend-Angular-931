@@ -9,7 +9,9 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Nombre</th>
+        <th class="col-ajustada">Nombre</th>
+        <th class="col-ajustada">Empresa</th>
+        <th class="col-ajustada">Modalidad</th>
         <th>Valor</th>
         <th></th>
       </tr>
@@ -20,7 +22,9 @@
       <tr *ngFor="let p of valores">
 
         <td>{{p.id}}</td>
-        <td>{{p.nombre}}</td>
+        <td class="col-ajustada">{{p.nombre}}</td>
+        <td class="col-ajustada">{{p.empresa}}</td>
+        <td class="col-ajustada" style="text-align:right"> {{p.modalidad}}</td>
         <td style="text-align:right">
 
           <span *ngIf="editandoId != p.id">
